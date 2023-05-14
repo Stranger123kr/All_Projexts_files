@@ -1,0 +1,558 @@
+* {
+  margin: 0%;
+  padding: 0%;
+  box-sizing: border-box;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+body {
+  background: var(--primary_color);
+  color: var(--main_color);
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: #fff;
+}
+
+img,
+button,
+a {
+  cursor: pointer;
+}
+
+:root {
+  --primary_color: #000;
+  --main_color: #fff;
+  --rgba_color: rgba(0, 0, 0, 0.7);
+  --top_head_color: #fff;
+  --select_btn: rgba(255, 255, 255, 0.7);
+  --change_color: #ffe500;
+  --color_change_btn: #ffe500;
+}
+
+.white_mode_color {
+  --primary_color: #ffe500;
+  --main_color: #000;
+  --rgba_color: rgba(192, 192, 192, 0.7);
+  --top_head_color: #000;
+  --select_btn: rgba(55, 55, 55, 0.7);
+  --change_color: #000;
+  --color_change_btn: #000;
+}
+
+/* ===== this is a mode to change a color according to your windows color mod ====== */
+
+/* @media (prefers-color-scheme: dark) {
+  :root {
+    --primary_color: #ffe500;
+    --main_color: #000;
+    --rgba_color: rgba(192, 192, 192, 0.7);
+    --top_head_color: #000;
+    --select_btn: rgba(55, 55, 55, 0.7);
+    --change_color: #000;
+    --color_change_btn: #000;
+  }
+} */
+
+/* ========================================= white_mod effect  ====================================== */
+
+.white_mod {
+  width: 3rem;
+  position: fixed;
+  top: 70%;
+  left: 1rem;
+  z-index: 999;
+}
+
+.white_mod img {
+  width: 100%;
+  background-color: var(--color_change_btn);
+  border-radius: 50%;
+}
+
+/* ========================================= loading effect  ====================================== */
+
+.loading {
+  background: #1d1f39
+    url("https://cdn.dribbble.com/users/1299339/screenshots/11116681/media/79bf1ac602445860e4a44bcd4bf80704.gif")
+    no-repeat center center;
+  background-size: 50%;
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  z-index: 9999;
+}
+
+/* ========================================= vertical scroll bar  ====================================== */
+
+::-webkit-scrollbar {
+  width: 0.7rem;
+}
+
+::-webkit-scrollbar-track {
+  background: #5a5a5a;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 1rem;
+  background: #fff;
+  border: 2px solid #5a5a5a;
+  background-clip: content-box;
+}
+
+/* ========================================= Main Code Start here ====================================== */
+
+.header {
+  width: 100%;
+  height: 50rem;
+  background-image: linear-gradient(var(--rgba_color), var(--rgba_color)),
+    url(images/header-image.png);
+  background-size: cover;
+  background-position: center;
+  padding: 0.7rem 8%;
+  position: relative;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.7rem 0;
+}
+
+.logo {
+  width: 9.6rem;
+}
+
+nav button {
+  border: none;
+  outline: none;
+  background-color: #db0001;
+  color: #fff;
+  padding: 0.5rem 1.4rem;
+  border-radius: 0.4rem;
+  margin-left: 0.8rem;
+}
+
+.language-btn {
+  border: none;
+  outline: none;
+  /* background: linear-gradient(rgba(0, 0, 0, 0.3)); */
+  background: transparent;
+  box-shadow: 0 0 2px var(--select_btn);
+  color: var(--top_head_color);
+  padding: 0.5rem 2rem;
+  border-radius: 0.4rem;
+}
+
+.header-content {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  text-align: center;
+  transform: translateX(-50%);
+}
+.header-content h1 {
+  font-size: 4rem;
+  line-height: 4.6rem;
+  font-weight: 600;
+  max-width: 41rem;
+  color: var(--top_head_color);
+}
+
+.header-content h3 {
+  font-size: 1.3rem;
+  font-weight: 400;
+  margin-bottom: 1.4rem;
+  margin-top: 1.4rem;
+}
+
+.header-content p {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.email-sign_up {
+  display: flex;
+  align-items: center;
+  margin-top: 2rem;
+  overflow: hidden;
+  border: none;
+  gap: 0.6rem;
+}
+
+.email-sign_up input {
+  flex: 1 1 auto;
+  padding: 1.1rem 2rem;
+  margin-left: 1.4rem;
+  border: none;
+  outline: none;
+  color: var(--main_color);
+  border-radius: 0.2rem;
+  background: transparent;
+  box-shadow: 0 0 2px var(--select_btn);
+}
+
+::placeholder {
+  color: var(--main_color);
+  font-size: 1rem;
+}
+
+.email-sign_up button {
+  padding: 0.9rem 2rem;
+  background: #db0001;
+  outline: none;
+  border: none;
+  color: #fff;
+  font-size: 1.2rem;
+  border-radius: 0.2rem;
+  font-weight: 700;
+}
+
+/* ------------------------------------  this is a hero section ------------------------------ */
+
+.line {
+  width: 100%;
+  height: 0.5rem;
+  position: absolute;
+  left: 0;
+  background-color: rgb(35, 35, 35);
+}
+
+.features {
+  position: relative;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 100%;
+  padding: 4.5rem 12%;
+}
+
+.text-col {
+  flex-basis: 50%;
+  margin-bottom: 1.4rem;
+}
+
+.text-col h2 {
+  font-weight: 900;
+  font-size: 3rem;
+}
+.text-col p {
+  font-weight: 400;
+  font-size: 1.5rem;
+  margin-top: 1rem;
+}
+
+.img-col {
+  flex-basis: 45%;
+  margin-bottom: 1.4rem;
+}
+
+.img-col img {
+  width: 100%;
+  display: block;
+  margin: auto;
+}
+
+/* ------------------------------------  Frequently Asked Questions section ------------------------------ */
+
+.faq {
+  padding: 4.5rem 12%;
+  text-align: center;
+  font-size: 1.2rem;
+}
+
+.faq h2 {
+  font-size: 3rem;
+  font-weight: 900;
+}
+
+.accordion {
+  margin: 4rem auto;
+  width: 100%;
+  max-width: 65rem;
+}
+
+.accordion li {
+  width: 100%;
+  padding: 0.3rem;
+}
+
+.accordion input[type="radio"] {
+  display: none;
+}
+
+.accordion li label {
+  display: flex;
+  align-items: center;
+  padding: 1.5rem;
+  font-size: 1.5rem;
+  font-weight: 500;
+  cursor: pointer;
+  background: #303030;
+  position: relative;
+  color: #fff;
+}
+
+label::after {
+  content: "+";
+  font-size: 2.2rem;
+  position: absolute;
+  right: 1.4rem;
+  transition: all 0.5s;
+}
+
+.accordion .content {
+  background: #303030;
+  margin-top: 0.1rem;
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.25s;
+  text-align: left;
+}
+
+.accordion input[type="radio"]:checked + label + .content {
+  max-height: 75rem;
+}
+
+.accordion input[type="radio"]:checked + label::after {
+  transform: rotate(135deg);
+}
+
+.content p {
+  padding: 1.2rem 1.5rem;
+  text-align: left;
+  color: rgb(255, 255, 255);
+  font-size: 1.5rem;
+}
+
+.faq .faq-header-content {
+  position: relative;
+  bottom: 1rem;
+  padding: 1.1rem 2rem;
+}
+
+.faq .email-sign_up {
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  max-width: 35rem;
+}
+
+/* ------------------------------------  Footer section ------------------------------ */
+
+.footer {
+  padding: 3.2rem 15% 3.75rem;
+  color: var(--select_btn);
+}
+
+.footer h2 {
+  font-size: 1.2rem;
+  font-weight: 400;
+}
+
+.footer .row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 100%;
+  padding: 3rem 0;
+}
+
+.row .col {
+  flex-basis: 33.333333333333%;
+  flex-grow: 1;
+  margin-bottom: -1.8rem;
+}
+
+.row .col a {
+  display: block;
+  text-align: left;
+  color: var(--select_btn);
+  font-size: 0.9rem;
+  margin-bottom: 0.8rem;
+  font-size: 1rem;
+}
+
+.bottom-btn,
+.netflix_india {
+  display: block;
+  color: var(--select_btn);
+}
+
+.bottom-btn {
+  display: inline-block;
+  margin-bottom: 1.2rem;
+}
+
+/* =================================== Media query start ================================== */
+
+/* ==================================== */
+
+@media (max-width: 960px) {
+  .row {
+    flex-direction: column;
+  }
+
+  .text-col {
+    text-align: center;
+    flex-basis: 50%;
+  }
+  .text-col h2 {
+    font-size: 2rem;
+    font-weight: 700;
+  }
+
+  .text-col p {
+    font-size: 1.125rem;
+    font-weight: 400;
+  }
+
+  .img-col {
+    order: 1;
+  }
+
+  .footer .row {
+    flex-direction: row;
+  }
+
+  .header-content {
+    top: 35%;
+  }
+}
+
+/* ========================================== */
+
+@media (max-width: 830px) {
+  .email-sign_up {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .header-content {
+    top: 25%;
+  }
+
+  .email-sign_up input {
+    width: 18rem;
+    margin-left: 0;
+    border: 0.1px solid var(--select_btn);
+  }
+}
+
+/* ==================================== */
+
+@media (max-width: 750px) {
+  .footer .row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5rem;
+    max-width: 20rem;
+  }
+}
+
+/* ==================================== */
+
+@media (max-width: 690px) {
+  .header-content h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 2rem;
+  }
+  .header-content {
+    top: 30%;
+  }
+}
+
+/* ==================================== */
+
+@media (max-width: 580px) {
+  .faq {
+    padding: 4.5rem 1%;
+  }
+}
+
+/* ==================================== */
+
+@media (max-width: 500px) {
+  .logo {
+    width: 5rem;
+  }
+
+  nav {
+    gap: 1rem;
+  }
+
+  .language-btn {
+    padding: 0.5rem 1rem;
+  }
+
+  nav button {
+    padding: 0.5rem 1rem;
+  }
+}
+
+/* ==================================== */
+
+@media (max-width: 430px) {
+  .header-content h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 3rem;
+    width: 18rem;
+  }
+
+  .white_mod {
+    width: 2rem;
+    position: fixed;
+    top: 15%;
+    left: 0.4rem;
+    z-index: 999;
+  }
+
+  nav {
+    gap: 0;
+  }
+
+  .faq {
+    padding: 4.5rem 1%;
+  }
+
+  .accordion li label {
+    font-size: 1rem;
+    padding: 1.5rem 0.5rem;
+  }
+
+  .text-col h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+  }
+
+  .email-sign_up input {
+    width: 15rem;
+  }
+
+  .faq h2 {
+    font-size: 2rem;
+    font-weight: 700;
+  }
+
+  .content p {
+    font-size: 0.9rem;
+  }
+
+  .header {
+    background-size: 70rem;
+  }
+}

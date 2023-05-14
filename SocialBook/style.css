@@ -1,0 +1,1008 @@
+* {
+  margin: 0%;
+  padding: 0%;
+  box-sizing: border-box;
+  font-family: "poppins", sans-serif;
+}
+
+:root {
+  --body-color: #efefef;
+  --nav-color: #1876f2;
+  --bg-color: #fff;
+  --paragraph-color: #626262;
+  --input-color: #626262;
+  --scroll-bar-track: #fff;
+}
+
+.dark-theme {
+  --body-color: #0a0a0a;
+  --nav-color: #000;
+  --bg-color: #000;
+  --paragraph-color: #fff;
+  --input-color: #fff;
+  --scroll-bar-track: #000;
+}
+
+/* ======================= This is loading effect on website opens ============================== */
+
+#loading-page {
+  background: #e8e8f3
+    url("https://cdn.dribbble.com/users/1229051/screenshots/11975864/media/ec9e55add7d03d553b71580d8575b4b8.gif")
+    no-repeat center center;
+  background-size: 50rem;
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  z-index: 9999;
+}
+
+body {
+  background: var(--body-color);
+  transition: background 0.3s;
+}
+
+html {
+  font-size: 13px;
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+img {
+  cursor: pointer;
+}
+
+/* ======================= Main Code Start here ============================== */
+
+/* ========  nav bar left side items ========= */
+
+header {
+  position: sticky;
+  top: 0rem;
+  z-index: 100;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--nav-color);
+  padding: 0.5rem 5%;
+}
+
+nav .logo {
+  width: 10rem;
+  margin-right: 2.8rem;
+}
+
+nav .nav-left,
+.nav-right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+nav .nav-left ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.8rem;
+}
+
+nav .nav-left ul li img {
+  width: 1.6rem;
+  cursor: pointer;
+}
+
+/* =======  nav bar right side items ========== */
+
+.nav-right {
+  gap: 2rem;
+}
+
+.nav-user-icon img {
+  width: 2.8rem;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.online {
+  position: relative;
+}
+
+.online-list p {
+  color: var(--paragraph-color);
+}
+
+.online::after {
+  content: "";
+  padding: 0.2rem 0.2rem;
+  border-radius: 50%;
+  background-color: #41db51;
+  border: 2px solid #fff;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.search-box {
+  background: #efefef;
+  width: 21.8rem;
+  border-radius: 1.5rem;
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
+  padding: 0 0.9rem;
+}
+
+.search-box input {
+  width: 100%;
+  background: transparent;
+  border: none;
+  padding: 0.5rem;
+  outline: none;
+}
+
+.search-box img {
+  width: 1.2rem;
+}
+
+/* ======================= hero section left side part Start here ============================== */
+
+/* =======  nav bar top side items ========== */
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.8rem 5%;
+}
+
+.container .left-sidebar {
+  flex-basis: 25%;
+  position: sticky;
+  top: 5rem;
+  align-self: flex-start;
+}
+
+.container .right-sidebar {
+  flex-basis: 25%;
+  position: sticky;
+  top: 4.6rem;
+  align-self: flex-start;
+  background: var(--bg-color);
+  padding: 1.4rem;
+  border-radius: 0.4rem;
+}
+
+.container .main-content {
+  flex-basis: 47%;
+}
+
+.left-sidebar .imp-links a,
+.shortcut-links a {
+  display: flex;
+  align-items: center;
+  margin-bottom: 2.5rem;
+  color: var(--paragraph-color);
+  width: fit-content;
+  gap: 1rem;
+  font-weight: 600;
+}
+
+.left-sidebar .imp-links a:last-child {
+  color: #1876f2;
+}
+
+.left-sidebar .imp-links img {
+  width: 1.8rem;
+}
+.left-sidebar .imp-links {
+  border-bottom: 1px solid #ccc;
+}
+
+/* =======  nav bar bottom side items ========== */
+
+.shortcut-links p {
+  margin: 1.9rem 0;
+  font-weight: 600;
+  color: var(--paragraph-color);
+}
+
+.shortcut-links a img {
+  width: 2.7rem;
+  margin-top: 0.5rem;
+  margin-right: 0.5rem;
+  border-radius: 0.2rem;
+}
+
+/* ======================= hero section right side part Start here ============================== */
+
+.sidebar-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.2rem;
+}
+
+.sidebar-title h4 {
+  color: var(--paragraph-color);
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.sidebar-title a {
+  font-weight: 600;
+  color: #1876f2;
+  font-size: 0.9rem;
+}
+
+.event {
+  display: flex;
+  font-size: 0.8;
+  margin-bottom: 1.4rem;
+  gap: 1.5rem;
+}
+
+.left-event {
+  border-radius: 0.5rem;
+  width: 4rem;
+  height: 4rem;
+  box-shadow: 0 0 0.4rem rgba(0, 0, 0, 0.1);
+  padding-top: 0.4rem;
+  margin-right: 0.9rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.left-event h3 {
+  color: var(--paragraph-color);
+}
+
+.event p {
+  font-size: 0.8rem;
+  color: var(--paragraph-color);
+}
+
+.event a {
+  font-size: 0.7rem;
+  color: #1876f2;
+}
+
+.left-event span {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background-color: #1876f2;
+  color: #fff;
+  width: 100%;
+  font-size: 0.8rem;
+  padding: 0.3rem 0;
+}
+
+.right-event h4 {
+  color: var(--paragraph-color);
+}
+
+.event p i {
+  color: red;
+}
+
+.sidebar-ads {
+  width: 100%;
+  margin-bottom: 1.2rem;
+  border-radius: 0.3rem;
+}
+
+.online-list {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.4rem;
+  gap: 1rem;
+}
+
+.online-list .online img {
+  width: 2.8rem;
+  border-radius: 50%;
+}
+.online-list .online {
+  width: 2.8rem;
+  border-radius: 50%;
+}
+
+.online-list .online::after {
+  top: unset;
+  bottom: 0.3rem;
+}
+
+/* ======================= hero section middle side part Start here ============================== */
+
+/* ======================= This is a gallery part of middle section ============================== */
+
+.story-gallery {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1.4rem;
+}
+
+.story {
+  flex-basis: 18%;
+  padding-top: 32%;
+  position: relative;
+  background-position: center;
+  background-size: cover;
+  border-radius: 0.3rem;
+}
+
+.story img {
+  position: absolute;
+  width: 2.8rem;
+  border-radius: 50%;
+  top: 10px;
+  left: 10px;
+  border: 5px solid #1876f2;
+}
+
+.story.story1 img:first-child {
+  top: unset;
+  left: 50%;
+  bottom: 2rem;
+  transform: translateX(-50%);
+  border: none;
+  width: 2.3rem;
+}
+
+.story p {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  bottom: 10px;
+  /* border-radius: 5px solid #626262; */
+  color: #fff;
+  font-size: 0.8rem;
+}
+
+.story1 {
+  background-image: linear-gradient(transparent, rgba(0, 0, 0, 0.5)),
+    url(images/status-1.png);
+}
+.story2 {
+  background-image: linear-gradient(transparent, rgba(0, 0, 0, 0.5)),
+    url(images/status-2.png);
+}
+.story3 {
+  background-image: linear-gradient(transparent, rgba(0, 0, 0, 0.5)),
+    url(images/status-3.png);
+}
+.story4 {
+  background-image: linear-gradient(transparent, rgba(0, 0, 0, 0.5)),
+    url(images/status-4.png);
+}
+.story5 {
+  background-image: linear-gradient(transparent, rgba(0, 0, 0, 0.5)),
+    url(images/status-5.png);
+}
+
+/* ======================= This is a post part of middle section ============================== */
+
+.write-post-container {
+  width: 100%;
+  background: var(--bg-color);
+  border-radius: 0.4rem;
+  padding: 1.4rem;
+  columns: var(--paragraph-color);
+}
+
+.user-profile {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.user-profile img {
+  width: 2.8rem;
+  border-radius: 50%;
+}
+
+.user-profile p {
+  font-weight: 600;
+  color: var(--paragraph-color);
+}
+.user-profile small {
+  font-weight: 600;
+  color: var(--paragraph-color);
+}
+
+.post-input-container {
+  padding-left: 3.6rem;
+  padding-top: 1.4rem;
+}
+.post-input-container textarea {
+  width: 100%;
+  resize: none;
+  border: none;
+  border-bottom: 1px solid #ccc;
+  outline: none;
+  background: transparent;
+  color: var(--input-color);
+}
+
+textarea::placeholder {
+  font-weight: 600;
+}
+
+.add-post-links {
+  margin-top: 0.8rem;
+  display: flex;
+  gap: 2.5rem;
+}
+
+.add-post-links a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  font-size: 0.9rem;
+  color: var(--paragraph-color);
+  font-weight: 600;
+}
+
+.add-post-links a img {
+  width: 1.5rem;
+}
+
+.post-container {
+  width: 100%;
+  background: var(--bg-color);
+  padding: 1.5rem;
+  color: var(--paragraph-color);
+  margin: 1.5rem 0;
+}
+
+.post-container .post-text {
+  margin: 1rem 0;
+  font-weight: 600;
+  color: var(--paragraph-color);
+}
+.post-container .post-text span {
+  font-weight: 600;
+  color: #1876f2;
+}
+
+.post-container .post-img {
+  width: 100%;
+  border-radius: 0.4rem;
+  margin-bottom: 0.5rem;
+}
+
+.post-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.post-row a i {
+  color: #9a9a9a;
+}
+
+.post-row .activity-icons div {
+  font-weight: bold;
+  display: inline-flex;
+  align-items: center;
+  margin-right: 2rem;
+}
+.post-row .activity-icons div img {
+  width: 1rem;
+  margin-right: 0.8rem;
+}
+
+.post-profile-icon {
+  display: flex;
+  align-items: center;
+}
+
+.post-profile-icon img {
+  width: 1.5rem;
+  border-radius: 50%;
+  margin-right: 0.4rem;
+}
+
+/* ======================= This is a load more button ============================== */
+
+.load-more-btn {
+  display: block;
+  padding: 0.5rem 0.9rem;
+  cursor: pointer;
+  margin: auto;
+  border: 1px solid #9a9a9a;
+  color: var(--paragraph-color);
+  background: transparent;
+  border-radius: 0.4rem;
+}
+
+/* ======================= This is a footer ============================== */
+
+footer {
+  text-align: center;
+  padding: 0.9rem 0 1.5rem;
+}
+footer p {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--paragraph-color);
+}
+
+/* ======================= This is a toggle button ============================== */
+
+#dark-btn {
+  position: absolute;
+  right: 1.8rem;
+  top: 1.8rem;
+  width: 3.2rem;
+  padding: 2px 3px;
+  background-color: #ccc;
+  border-radius: 1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  transition: padding-left 0.5s, background 0.5s;
+}
+
+#dark-btn span {
+  width: 15px;
+  height: 15px;
+  background: #fff;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+#dark-btn.dark-btn-on {
+  padding-left: 22px;
+  background-color: #000;
+  background: #5e5e5e;
+}
+
+/* ======================= This is setting menu ============================== */
+
+.setting-menu.show {
+  max-height: 32rem;
+}
+
+.setting-menu {
+  position: absolute;
+  top: 4.4rem;
+  right: 5%;
+  width: 90%;
+  background: var(--bg-color);
+  max-width: 23.5rem;
+  box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.4);
+  border-radius: 0.4rem;
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.3s ease-in-out;
+}
+
+.setting-menu .user-profile a {
+  font-size: 0.8rem;
+  color: #1876f2;
+}
+
+.setting-menu-inner {
+  padding: 1rem;
+}
+
+.setting-menu-inner .user-profile {
+  border-bottom: 1px solid #9a9a9a;
+  padding: 0.8rem 0;
+}
+
+.setting-links {
+  display: flex;
+  align-items: center;
+  margin: 0 0 1.5rem 1rem;
+}
+
+.setting-links .setting-icon {
+  width: 3rem;
+  margin-right: 0.8rem;
+  border-radius: 50%;
+}
+.setting-links a {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--paragraph-color);
+  flex: 0.9;
+}
+
+/* ======================= This is vertical scroll bar ============================== */
+
+::-webkit-scrollbar {
+  width: 1rem;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--scroll-bar-track);
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 2.1rem;
+  border: 2px solid transparent;
+  background: #5e5e5e;
+  background-clip: content-box;
+}
+
+/* ======================= This is profile.html part styling ============================== */
+
+.profile-container {
+  padding: 20px 15%;
+  /* border: 1px solid black; */
+  color: #626262;
+}
+
+.cover-img {
+  width: 100%;
+  border-radius: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.profile-details {
+  display: flex;
+  padding: 1.6rem;
+  border-radius: 0.5rem;
+  justify-content: space-between;
+  align-items: flex-start;
+  background: var(--bg-color);
+}
+
+.pd-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.5rem;
+}
+
+.pd-row h3 {
+  margin-bottom: 0.5rem;
+  color: var(--paragraph-color);
+  font-weight: 600;
+  font-size: 1.5rem;
+}
+.pd-row p {
+  margin-bottom: 0.5rem;
+  color: var(--paragraph-color);
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.pd-row .pd-img {
+  width: 7.2rem;
+  border-radius: 0.5rem;
+}
+
+.pd-row div img {
+  width: 2rem;
+  border-radius: 50%;
+  margin-top: 0.8rem;
+  margin-left: 0.5rem;
+}
+
+.pd-right button {
+  background: #1876f2;
+  border: none;
+  outline: none;
+  padding: 0.6rem 0.8rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--bg-color);
+  border-radius: 0.3rem;
+  margin-left: 0.7rem;
+  cursor: pointer;
+}
+
+.pd-right button img {
+  height: 1.3rem;
+  margin-right: 0.7rem;
+  color: var(--bg-color);
+}
+
+.pd-right button:first-child {
+  background: #e4e6eb;
+  color: #000;
+}
+
+.pd-right {
+  text-align: right;
+}
+.pd-right a {
+  background: #e4e6eb;
+  border-radius: 0.3rem;
+  padding: 12px;
+  display: inline-flex;
+  margin-top: 30px;
+}
+
+.pd-right a img {
+  width: 1.5rem;
+}
+
+.profile-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-top: 1.6rem;
+}
+
+.info-col {
+  flex-basis: 33%;
+}
+.post-col {
+  flex-basis: 65%;
+}
+
+.profile-intro {
+  background: var(--bg-color);
+  padding: 1.6rem;
+  margin-bottom: 1.6rem;
+  border-radius: 0.5rem;
+}
+
+.profile-intro h3 {
+  color: var(--paragraph-color);
+  font-weight: 600;
+  margin: 0.5rem 0;
+}
+
+.profile-intro .intro-text {
+  color: var(--paragraph-color);
+  text-align: center;
+  margin: 10px 0;
+  font-weight: 600;
+  font-size: 1rem;
+}
+.profile-intro .intro-text img {
+  width: 1rem;
+  margin-bottom: -3px;
+}
+
+.profile-intro hr {
+  border: 0;
+  height: 1px;
+  background: #ccc;
+  margin: 1.8rem 0;
+}
+
+.profile-intro ul li {
+  font-size: 1.1rem;
+  margin: 1.1rem 0;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-weight: 600;
+  color: var(--paragraph-color);
+}
+
+.profile-intro ul li img {
+  width: 2rem;
+}
+
+.title-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.title-box a {
+  color: var(--paragraph-color);
+}
+
+.photo-box {
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  gap: 10px;
+  margin-top: 1.1rem;
+}
+
+.photo-box div img {
+  width: 100%;
+  cursor: pointer;
+}
+
+.profile-intro p {
+  font-size: 1rem;
+  color: var(--paragraph-color);
+}
+
+.friends-box {
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  gap: 10px;
+  margin-top: 1.1rem;
+}
+
+.friends-box div img {
+  width: 100%;
+  cursor: pointer;
+  padding-bottom: 20px;
+}
+
+.friends-box div {
+  position: relative;
+}
+
+.friends-box div p {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--paragraph-color);
+}
+
+/* ======================= This is  first Main  Media query part  ============================== */
+
+/* -----------------------------------------(1038px)------------------------------------- */
+
+@media (max-width: 1038px) {
+  .left-sidebar {
+    display: none;
+  }
+
+  .right-sidebar {
+    display: none;
+  }
+
+  nav {
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .container .main-content {
+    margin: 0 auto;
+  }
+}
+
+/* -----------------------------------------(730px)------------------------------------- */
+
+@media (max-width: 730px) {
+  .search-box {
+    display: none;
+  }
+}
+
+/* -----------------------------------------(500px)------------------------------------- */
+
+@media (max-width: 500px) {
+  html {
+    font-size: 12px;
+  }
+  #dark-btn.dark-btn-on {
+    padding-left: 20px;
+  }
+}
+
+/* -----------------------------------------(450px)------------------------------------- */
+@media (max-width: 450px) {
+  .container {
+    padding: 0.8rem 1%;
+  }
+  html {
+    font-size: 11px;
+  }
+
+  #dark-btn.dark-btn-on {
+    padding-left: 18px;
+  }
+}
+
+/* -----------------------------------------(402px)------------------------------------- */
+
+@media (max-width: 402px) {
+  html {
+    font-size: 10px;
+  }
+
+  p {
+    font-size: 1.1rem;
+  }
+
+  #dark-btn.dark-btn-on {
+    padding-left: 14px;
+  }
+}
+
+/* -----------------------------------------(368px)------------------------------------- */
+
+@media (max-width: 368px) {
+  html {
+    font-size: 9px;
+  }
+
+  #dark-btn.dark-btn-on {
+    padding-left: 11px;
+  }
+}
+
+/* ======================= This is second for profile page Media query part  ========================= */
+
+/* -----------------------------------------(1180px)------------------------------------- */
+
+@media (max-width: 1180px) {
+  .friends-box {
+    grid-template-columns: repeat(2, auto);
+  }
+}
+
+/* -----------------------------------------(960px)------------------------------------- */
+
+@media (max-width: 960px) {
+  .profile-container {
+    padding: 20px 5%;
+  }
+
+  .profile-details {
+    flex-wrap: wrap;
+  }
+}
+
+/* -----------------------------------------(800px)------------------------------------- */
+
+@media (max-width: 800px) {
+  .post-col {
+    flex-basis: 90%;
+    margin: 0 auto;
+  }
+  .info-col {
+    flex-basis: 90%;
+    margin: 0 auto;
+  }
+
+  .friends-box {
+    grid-template-columns: repeat(3, auto);
+  }
+
+  .profile-info {
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .profile-container {
+    padding: 20px 2%;
+  }
+
+  .profile-details {
+    max-width: 38rem;
+    margin: 0 auto;
+    max-width: 90%;
+  }
+
+  .cover-img {
+    width: 90%;
+    max-width: 96%;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+/* -----------------------------------------(575px)------------------------------------- */
+
+@media (max-width: 596px) {
+  .pd-row {
+    gap: 2.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .pd-right {
+    text-align: left;
+  }
+
+  .pd-right button:first-child {
+    margin-right: 1.5rem;
+  }
+}

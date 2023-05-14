@@ -1,0 +1,1129 @@
+* {
+  margin: 0%;
+  padding: 0%;
+  box-sizing: border-box;
+  /* font-family: "League Spartan", sans-serif; */
+  /* font-family: "Secular One", sans-serif; */
+  font-family: "Ubuntu", sans-serif;
+}
+
+:root {
+  --primary: #f0f2f5;
+  --main-color: #fff;
+  --heading-color: #222;
+  --para-color: #777;
+  --search-color: #777;
+  --nav-line-color: #045be6;
+  --box-shadow: rgba(0, 0, 0, 0.4);
+}
+
+.dark_mode {
+  --primary: #0a0a0a;
+  --main-color: #000;
+  --heading-color: #fff;
+  --para-color: #fff;
+  --search-color: #777;
+  --nav-line-color: rgb(226, 226, 119);
+  --box-shadow: rgba(255, 255, 255, 0.4);
+}
+
+body {
+  background: var(--primary);
+  color: #5f5f5f;
+  overflow-x: hidden;
+  transition: all 0.5s linear;
+}
+
+a {
+  text-decoration: none;
+  color: #5f5f5f;
+}
+
+li {
+  list-style: none;
+}
+
+/* <!-- this is a loading effect --> */
+
+.loading {
+  background: #e8e8f3
+    url("https://cdn.dribbble.com/users/1229051/screenshots/11975864/media/ec9e55add7d03d553b71580d8575b4b8.gif")
+    no-repeat center center;
+  background-size: 50rem;
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  z-index: 9999;
+}
+
+/* =============================== Main code start here ================================ */
+
+/* =============================== This is a navbar code start here ================================ */
+
+.navbar {
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--main-color);
+  padding: 6px 6%;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.navbar-left {
+  display: flex;
+  align-items: center;
+}
+
+.search-box {
+  background: #f0f2f5;
+  width: 16rem;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 1rem;
+}
+
+.hamburger {
+  display: none;
+}
+
+.hamburger #icons {
+  color: var(--heading-color);
+}
+
+.search-box img {
+  width: 14px;
+  cursor: pointer;
+}
+
+.search-box input {
+  width: 100%;
+  background: transparent;
+  border: none;
+  outline: none;
+  padding: 0.6rem;
+  color: #000;
+}
+
+.logo img {
+  width: 2rem;
+  margin-right: 1rem;
+  display: block;
+}
+
+.navbar-center ul li {
+  display: inline-block;
+}
+
+.navbar-center ul li a {
+  display: flex;
+  align-items: center;
+  font-size: 0.8rem;
+  font-weight: 600;
+  margin: 0.5rem 0.6rem;
+  padding-left: 0.5rem;
+  position: relative;
+  color: var(--para-color);
+}
+
+.navbar-center ul li a img {
+  width: 1.9rem;
+}
+
+.navbar-center ul li a::after {
+  content: "";
+  width: 0%;
+  height: 2px;
+  background: var(--nav-line-color);
+  position: absolute;
+  bottom: -15px;
+  transition: width 0.3s;
+}
+
+.navbar-center ul li a:hover::after,
+.navbar-center ul li a.active::after {
+  width: 100%;
+}
+
+.nav_profile-img {
+  width: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: block;
+  position: relative;
+}
+
+.online {
+  position: relative;
+}
+
+.online::after {
+  content: "";
+  position: absolute;
+  width: 0.5rem;
+  height: 0.5rem;
+  background: #41db51;
+  border-radius: 50%;
+  right: 0;
+  top: 0;
+  border: 2px solid #fff;
+}
+
+/*  ----------------------- profile drop down menu ------------------------ */
+
+.profile-menu-warp {
+  position: absolute;
+  top: 100%;
+  right: 5%;
+  width: 20rem;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s;
+}
+.profile-menu-warp.open_menu {
+  max-height: 25rem;
+}
+
+.profile-menu {
+  background: #222;
+  color: #fff;
+  padding: 1.4rem;
+  margin: 0.8rem;
+}
+
+.toggle-btn {
+  position: relative;
+  width: 40px;
+  height: 22px;
+  border-radius: 2rem;
+  background: #5e5e5e;
+  padding: 0.2rem 0.2rem;
+}
+.toggle-btn span {
+  position: absolute;
+  padding: 0.5rem 0.5rem;
+  border-radius: 50%;
+  background-color: #fff;
+  transition: all 0.3s;
+}
+.toggle-btn span.dark_on {
+  margin-left: 1.1rem;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.user-info img {
+  width: 3.2rem;
+  border-radius: 50%;
+}
+
+.user-info h3 {
+  font-weight: 500;
+  margin-top: -0.7rem;
+}
+.user-info a {
+  color: #ccc;
+  font-size: 0.8rem;
+}
+
+.profile-menu hr {
+  border: 0;
+  height: 1px;
+  background: #ccc;
+  width: 100%;
+  margin: 1rem 0 0.8rem;
+}
+
+.profile-menu-links {
+  display: flex;
+  align-items: center;
+  color: #fff;
+  margin: 0.8rem 0;
+  font-size: 0.9rem;
+}
+
+.profile-menu-links p {
+  width: 100%;
+  font-weight: 600;
+}
+.profile-menu-links img {
+  width: 2.3rem;
+  border-radius: 50%;
+  margin-right: 1rem;
+}
+
+/* =============================== This is a navbar code end here ================================ */
+
+/* =============================== This is a Main content code ================================ */
+
+.container {
+  display: flex;
+  padding: 1.4rem 6%;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+/* ==================== This is a Main content of left side section code start here ================== */
+
+/* ------------------------------------- this is a code of first 1 box of left side --------------------- */
+
+.left-sidebar {
+  flex-basis: 25%;
+  align-self: flex-start;
+  position: sticky;
+  top: 5rem;
+}
+
+.sidebar-profile-box {
+  background: var(--main-color);
+}
+
+.sidebar-profile-info {
+  padding: 0 1.8rem;
+}
+
+.sidebar-profile-info img {
+  width: 5.6rem;
+  border-radius: 50%;
+  background: #fff;
+  padding: 4px;
+  margin-top: -45px;
+}
+
+.sidebar-profile-info h1 {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: var(--heading-color);
+  margin-bottom: 0.2rem;
+}
+
+.sidebar-profile-info h3 {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #777;
+}
+
+.sidebar-profile-info ul {
+  margin: 1.2rem 0;
+}
+
+.sidebar-profile-info ul li {
+  width: 100%;
+  margin: 0.4rem 0;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.sidebar-profile-info ul li span {
+  float: right;
+  color: #045be6;
+}
+
+.sidebar-profile-links {
+  border-top: 1px solid #ccc;
+  display: flex;
+  align-items: center;
+}
+.sidebar-profile-links a {
+  flex-basis: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 0;
+  gap: 0.5rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  border-left: 1px solid #ccc;
+}
+
+.sidebar-profile-links a:first-child {
+  border-left: none;
+}
+
+.sidebar-profile-links a img {
+  width: 1.4rem;
+}
+
+/* ------------------------------------- this is a code of second 2 box of left side --------------------- */
+
+.sidebar-activity {
+  background: var(--main-color);
+  margin: 0.7rem 0;
+  padding: 0.5rem 1.9rem;
+}
+
+.sidebar-activity h3 {
+  color: var(--para-color);
+  font-size: 1rem;
+  margin: 1.4rem 0 0.6rem;
+}
+
+.sidebar-activity a {
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #888;
+  gap: 1rem;
+  margin: 3px 0rem;
+}
+
+.sidebar-activity a img {
+  width: 1.4rem;
+}
+
+.discover-more-links {
+  border-top: 1px solid #ccc;
+  text-align: center;
+  margin-top: 1.5rem;
+  margin-left: -25px;
+  margin-right: -25px;
+}
+
+.discover-more-links a {
+  color: #045be6;
+  display: inline-block;
+  margin: 0.7rem 0;
+}
+
+/* ==================== This is a Main content of left side section code end here ================== */
+
+/* ================== This is a Main content of center side section code start here =============== */
+
+/* ------------------------------------- this is a code of first 1 box of right side --------------------- */
+.main-content {
+  flex-basis: 47%;
+}
+
+.create-post {
+  background: var(--main-color);
+}
+
+.create-post-input {
+  padding: 1.4rem 1.8rem 0.7rem;
+  display: flex;
+  align-items: flex-start;
+}
+.create-post-input img {
+  width: 2.3rem;
+  border-radius: 50%;
+  margin-right: 0.7rem;
+}
+
+.create-post-input textarea {
+  width: 100%;
+  resize: none;
+  background: transparent;
+  border: none;
+  outline: none;
+  margin-top: 0.8rem;
+  color: var(--para-color);
+}
+
+::placeholder {
+  font-weight: 900;
+  font-size: 0.9rem;
+  color: var(--search-color);
+}
+
+.create-post-links {
+  display: flex;
+  align-items: flex-start;
+  color: var(--para-color);
+}
+
+.create-post-links li {
+  border-top: 1px solid #ccc;
+  flex-basis: 25%;
+  border-left: 1px solid #ccc;
+  height: 2.8rem;
+  font-size: 0.8rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.create-post-links li:first-child {
+  border-left: none;
+}
+.create-post-links li:last-child {
+  background: #045be6;
+  color: #fff;
+}
+
+.create-post-links li img {
+  width: 1.2rem;
+}
+
+/* ------------------------------------- this is a code of second 2 box of right side --------------------- */
+
+.sort-by {
+  display: flex;
+  margin: 0.7rem 0;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.sort-by hr {
+  flex: 1;
+  border: 0;
+  background: #ccc;
+  height: 1px;
+}
+
+.sort-by p {
+  font-size: 0.9rem;
+}
+.sort-by p span {
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+.sort-by p span img {
+  width: 0.9rem;
+}
+
+/* ------------------------------------- this is a code of third 3 box of right side --------------------- */
+
+.post {
+  background: var(--main-color);
+  padding: 1.4rem 1.8rem 0.4rem;
+  margin: 0.4rem 0 1rem;
+}
+
+.post-author {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 1.4rem;
+  gap: 0.8rem;
+}
+
+.post-author img {
+  width: 2.3rem;
+  border-radius: 50%;
+}
+
+.post-author h2 {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: var(--heading-color);
+}
+
+.post-author small {
+  display: block;
+  margin-bottom: -0.2rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  line-height: 1.4rem;
+}
+
+.post p {
+  font-size: 0.85rem;
+  font-weight: 600;
+  line-height: 1.25rem;
+  margin-bottom: 1rem;
+  color: var(--para-color);
+}
+
+.post-stats {
+  display: flex;
+  justify-content: space-between;
+  /* flex-wrap: wrap; */
+  align-items: center;
+  font-size: 0.8rem;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 0.4rem;
+  padding-top: 0.3rem;
+}
+
+.post-stats div {
+  display: flex;
+  align-items: center;
+}
+
+.post-stats div img {
+  width: 1rem;
+  margin-right: -0.5rem;
+}
+
+.liked-users {
+  margin-left: 0.9rem;
+}
+
+.post-activity {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.6rem 0;
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+.post-activity div {
+  display: flex;
+  align-items: center;
+  color: var(--para-color);
+}
+
+.post-activity-user-icon {
+  width: 1.6rem;
+  border-radius: 50%;
+}
+
+.post-activity-arrow-icon {
+  width: 0.8rem;
+  margin-left: 0.3rem;
+}
+
+.post-activity-link img {
+  width: 1.2rem;
+  margin-right: 0.5rem;
+}
+
+/* ================== This is a Main content of center side section code end here =============== */
+
+/* ================== This is a Main content of right side section code start here ============== */
+
+/* ------------------------------------- this is a code of second 1 box of right side --------------------- */
+
+.right-sidebar {
+  flex-basis: 25%;
+  align-self: flex-start;
+  position: sticky;
+  top: 5rem;
+}
+
+.sidebar-news {
+  background: var(--main-color);
+  padding: 0.7rem 1.2rem;
+}
+
+.sidebar-news .info-icon {
+  width: 1rem;
+  float: right;
+  margin-top: 1rem;
+}
+
+.sidebar-news h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--para-color);
+  margin: 0.7rem 0 2rem;
+}
+
+.sidebar-news a {
+  display: block;
+  font-size: 0.8rem;
+  font-weight: 600;
+  margin-top: 0.7rem;
+  margin-bottom: -0rem;
+  color: var(--heading-color);
+}
+
+.sidebar-news span {
+  font-size: 0.8rem;
+}
+
+.sidebar-news .read-more-links {
+  color: #045be6;
+  font-weight: 600;
+  margin: 1.4rem 0 0.7rem;
+}
+
+/* ------------------------------------- this is a code of second 2 box of right side --------------------- */
+
+.sidebar-ad {
+  background: var(--main-color);
+  padding: 1rem 1.6rem;
+  text-align: center;
+  margin: 0.8rem 0;
+  font-size: 0.8rem;
+}
+
+.sidebar-ad img {
+  width: 4rem;
+  border-radius: 50%;
+  margin: 0.3rem;
+}
+
+.sidebar-ad small {
+  float: right;
+  font-weight: 600;
+  color: var(--para-color);
+}
+
+.sidebar-ad p {
+  margin-top: 1.9rem;
+  margin-bottom: 0.7rem;
+  color: var(--para-color);
+}
+.sidebar-ad b {
+  display: block;
+  font-weight: 600;
+  margin-top: 0.7rem;
+  color: var(--para-color);
+}
+
+.ad-links {
+  display: inline-block;
+  border-radius: 2rem;
+  border: 1px solid #045be6;
+  padding: 0.5rem 1rem;
+  margin: 1.4rem auto 0.6rem;
+  color: #045be6;
+}
+
+/* ------------------------------------- this is a code of third 3 box of right side --------------------- */
+
+.sidebar-useful-links {
+  padding: 1rem 1.7rem;
+  text-align: center;
+}
+
+.sidebar-useful-links a {
+  display: inline-block;
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin: 0.3rem 0.2rem;
+  color: var(--para-color);
+}
+
+.copyright-msg {
+  padding: 0 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.3rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--para-color);
+}
+
+.copyright-msg img {
+  width: 1.2rem;
+}
+
+/* ============================== This is a profile.index left side part css ======================== */
+.profile-main {
+  flex-basis: 73%;
+}
+
+.profile-container {
+  background: var(--main-color);
+}
+
+.profile-container-inner {
+  padding: 0 4% 0.8rem;
+}
+
+.profile-pic {
+  width: 9.6rem;
+  border-radius: 50%;
+  padding: 0.3rem;
+  background: #fff;
+  margin-top: -4.5rem;
+}
+
+.profile-container h1 {
+  font-size: 1.9rem;
+  font-weight: 600;
+  color: var(--heading-color);
+}
+
+.profile-container b {
+  display: inline-block;
+  margin-top: 0.3rem;
+  font-weight: 500;
+  color: var(--para-color);
+}
+.profile-container p {
+  margin-top: 0.3rem;
+}
+.profile-container p a {
+  color: #045be6;
+}
+
+.mutual-connection {
+  display: flex;
+  margin: 1.4rem 0;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.mutual-connection img {
+  width: 1.9rem;
+  border-radius: 50%;
+}
+
+.profile-btn {
+  margin: 1.4rem 0;
+}
+
+.profile-btn a {
+  display: inline-flex;
+  align-items: center;
+  background: #e4e6eb;
+  padding: 0.4rem 0.9rem;
+  border-radius: 0.4rem;
+  margin-right: 0.8rem;
+}
+
+.profile-btn a:first-child {
+  background: #045be6;
+  color: #fff;
+}
+
+.profile-btn a img {
+  width: 1.5rem;
+  margin-right: 0.5rem;
+}
+
+.profile-description {
+  background: var(--main-color);
+  padding: 1.4rem 4% 1rem;
+  margin: 0.9rem 0;
+}
+
+.profile-description h2 {
+  color: var(--heading-color);
+  margin: 0rem 0 1.8rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+}
+
+.profile-description p {
+  line-height: 1.5rem;
+  color: var(--para-color);
+}
+
+.see-more-link {
+  display: block;
+  text-align: right;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--nav-line-color);
+}
+
+.profile-desc-row {
+  display: flex;
+  gap: 1.7rem;
+  align-items: flex-start;
+  margin: 1.4rem 0;
+}
+
+.profile-desc-row img {
+  width: 3rem;
+}
+.profile-desc-row div {
+  width: 100%;
+  line-height: 1.5rem;
+}
+
+.profile-desc-row h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--heading-color);
+}
+
+.profile-desc-row b {
+  display: block;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.profile-desc-row p {
+  margin-top: 0.6rem;
+}
+
+.profile-desc-row hr {
+  border: none;
+  border-bottom: 1px solid #ccc;
+  margin-top: 0.8rem;
+}
+
+.profile-description hr {
+  border: none;
+  border-bottom: 1px solid #ccc;
+  margin-top: 0.8rem;
+}
+
+.experience-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 1.4rem;
+  gap: 0.8rem;
+  color: var(--nav-line-color);
+}
+
+.experience-link img {
+  width: 1.4rem;
+}
+
+.skill-btn {
+  display: inline-block;
+  margin: 0.7rem 0.3rem;
+  padding: 0.6rem 1.2rem;
+  border-radius: 1.9rem;
+  border: 1px solid #777;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--nav-line-color);
+}
+
+.language-btn {
+  display: inline-block;
+  margin: 0.7rem 0.4rem;
+  padding: 0.6rem 1.2rem;
+  border: 1px solid #777;
+  font-size: 0.9rem;
+  font-weight: 600;
+  background: #e4e6eb;
+}
+
+/* ============================= This is a profile.index right side part css ====================== */
+
+.profile-sidebar {
+  flex-basis: 25%;
+  align-self: flex-start;
+  position: sticky;
+  top: 5rem;
+}
+
+.sidebar-ad.profile {
+  margin: 0;
+}
+
+.sidebar-people {
+  background: var(--main-color);
+  padding: 1rem 1.8rem;
+  margin: 0.8rem 0;
+}
+
+.sidebar-people h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0.8rem 0 1.4rem;
+  color: var(--heading-color);
+}
+
+.sidebar-people-row {
+  display: flex;
+  gap: 0.5rem;
+  align-items: flex-start;
+}
+
+.sidebar-people-row img {
+  width: 3rem;
+  border-radius: 50%;
+}
+
+.sidebar-people-row h2 {
+  font-size: 1rem;
+  color: var(--heading-color);
+}
+
+.sidebar-people-row p {
+  font-size: 0.8rem;
+  margin: 0.4rem 0;
+}
+
+.sidebar-people-row a {
+  display: inline-block;
+  margin: 0.7rem 0;
+  padding: 0.5rem 1.8rem;
+  border: 1px solid #5f5f5f;
+  border-radius: 2rem;
+  color: var(--nav-line-color);
+}
+
+.profile-footer {
+  padding: 0 6% 1.5rem;
+}
+
+.profile-footer .sidebar-useful-links {
+  text-align: left;
+  padding: 0;
+}
+
+.profile-footer .copyright-msg {
+  justify-content: flex-start;
+  padding: 0.5rem 0;
+}
+
+/* ============================= This is a  vertical scroll bar design ====================== */
+
+::-webkit-scrollbar {
+  width: 0.8rem;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #fff;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 5rem;
+  background: #045be6;
+  border: 3px solid transparent;
+  background-clip: content-box;
+}
+
+/* ============================= This is a Media Query of index.html ====================== */
+
+/* ----------------- 1200px ------------------- */
+
+@media (max-width: 1200px) {
+  .container {
+    display: inline-block;
+    padding: 1.4rem 6%;
+  }
+
+  .left-sidebar {
+    position: relative;
+    top: 0;
+  }
+  .right-sidebar {
+    position: relative;
+    top: 0;
+  }
+}
+
+/* ----------------- 1090px ------------------- */
+
+@media (max-width: 1090px) {
+  .search-box {
+    display: none;
+  }
+}
+
+/* ----------------- 800px ------------------- */
+
+@media (max-width: 800px) {
+  .search-box {
+    display: none;
+  }
+
+  .navbar-center ul {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    background: #fff;
+    width: 25rem;
+    top: 3.8rem;
+    left: 2.8rem;
+    height: 15.5rem;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-in-out;
+    z-index: 999;
+    border-radius: 0.5rem;
+  }
+
+  .navbar-center ul.show {
+    display: flex;
+    width: 25rem;
+    max-height: 30rem;
+    box-shadow: 0 0 0.3rem var(--box-shadow);
+  }
+
+  .hamburger {
+    display: inline-flex;
+    align-items: center;
+    font-size: 2rem;
+    cursor: pointer;
+  }
+}
+
+/* ----------------- 470px ------------------- */
+
+@media (max-width: 470px) {
+  html {
+    font-size: 15px;
+  }
+  .navbar-center ul {
+    width: 20rem;
+    top: 4.2rem;
+    left: 1rem;
+    background: var(--main-color);
+  }
+
+  .navbar-center ul.show {
+    width: 20rem;
+  }
+
+  .toggle-btn {
+    width: 40px;
+    height: 21px;
+    padding: 0.1rem 0.2rem;
+  }
+  .toggle-btn span {
+    padding: 0.6rem 0.6rem;
+  }
+
+  .toggle-btn span.dark_on {
+    margin-left: 1.1rem;
+  }
+}
+
+/* ----------------- 415px ------------------- */
+
+@media (max-width: 415px) {
+  html {
+    font-size: 14px;
+  }
+  .container {
+    padding: 1rem 3%;
+  }
+  .navbar-center ul {
+    left: 0.7rem;
+  }
+
+  .toggle-btn {
+    width: 40px;
+    height: 20px;
+    padding: 0.1rem 0.2rem;
+  }
+
+  .toggle-btn span.dark_on {
+    margin-left: 1.2rem;
+  }
+}
+
+/* ----------------- 365px ------------------- */
+
+@media (max-width: 365px) {
+  .container {
+    padding: 1rem 2%;
+  }
+  .navbar-center ul {
+    top: 4.5rem;
+    left: 0.5rem;
+  }
+
+  .toggle-btn {
+    width: 40px;
+    height: 19px;
+    padding: 0.1rem 0.2rem;
+  }
+
+  .toggle-btn span.dark_on {
+    margin-left: 1.4rem;
+  }
+}
+
+/* ----------------- 355px ------------------- */
+
+@media (max-width: 355px) {
+  html {
+    font-size: 13px;
+  }
+}
