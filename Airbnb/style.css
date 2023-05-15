@@ -1,0 +1,268 @@
+* {
+  margin: 0%;
+  padding: 0%;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+/* ============================= this is some utility ==============================  */
+
+li {
+  list-style: none;
+}
+
+img {
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+  font-size: 0.9rem;
+  color: #fff;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+p {
+  font-size: 1rem;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+/* ============================= this is some color change part ==============================  */
+
+/* :root{
+
+} */
+
+/* ============================ Main code start form here ================================= */
+
+.header {
+  min-height: 100vh;
+  width: 100%;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+    url(images/banner.png);
+  background-position: center;
+  background-size: cover;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.4rem 7%;
+}
+
+nav .nav_links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+nav .nav_links li a {
+  position: relative;
+}
+
+nav .nav_links li a::after {
+  content: "";
+  width: 0;
+  height: 2px;
+  background: #fff;
+  position: absolute;
+  bottom: -15px;
+  left: 0;
+  transition: width 0.3s;
+}
+
+nav .nav_links li a:hover:after {
+  width: 100%;
+}
+
+.logo {
+  width: 9rem;
+}
+
+.register_btn {
+  color: #000;
+  padding: 0.8rem 1.4rem;
+  background: #fff;
+  border-radius: 2rem;
+}
+
+.container {
+  padding: 0 7%;
+}
+
+.header h1 {
+  font-size: 3rem;
+  color: #fff;
+  text-align: center;
+  padding-top: 22%;
+}
+
+.search_bar {
+  background: #fff;
+  width: 70%;
+  margin: 2rem auto;
+  padding: 0.6rem 0.8rem 0.6rem 2rem;
+  border-radius: 3.2rem;
+}
+
+.search_bar form {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.search_bar form input {
+  display: block;
+  background: transparent;
+  border: none;
+  outline: none;
+  margin-top: 0.4rem;
+}
+
+.search_bar form button {
+  width: 3.5rem;
+  height: 3.5rem;
+  background: #ff5361;
+  border-radius: 50%;
+  border: none;
+  outline: none;
+}
+
+.search_bar form button img {
+  width: 1rem;
+  margin-top: 0.4rem;
+}
+
+.location_input {
+  flex: 2;
+}
+
+.search_bar form label {
+  font-weight: 600;
+}
+
+/* ============================ exclusives part ================================= */
+
+.sub_title {
+  margin: 3rem 0 1.4rem;
+  font-size: 2rem;
+  font-weight: 500;
+  color: #333;
+}
+
+.exclusives {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.exclusives div {
+  position: relative;
+  border-radius: 0.5rem;
+  width: 100%;
+  overflow: hidden;
+}
+
+.exclusives div img {
+  width: 100%;
+  height: 100%;
+  transition: all 0.5s;
+}
+
+.exclusives div img:hover {
+  transform: scale(1.15);
+  filter: brightness(80%);
+}
+
+.exclusives div span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: #fff;
+  cursor: pointer;
+}
+
+.exclusives div span h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+/* ============================ trending  part ================================= */
+
+.trending {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-gap: 2rem;
+}
+.trending div {
+  border-radius: 0.5rem;
+  width: auto;
+  overflow: hidden;
+}
+.trending div img {
+  width: 100%;
+  height: 100%;
+  transition: all 0.5s;
+}
+
+.trending div img:hover {
+  transform: scale(1.15);
+  filter: brightness(80%);
+}
+
+.trending div h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-top: 0.8rem;
+  position: absolute;
+}
+
+/* ============================ cta part ================================= */
+
+.cta {
+  margin: 7rem 0;
+  background-image: linear-gradient(to right, #3f2321, transparent),
+    url(images/banner-2.png);
+  background-size: cover;
+  background-position: center;
+  border-radius: 0.5rem;
+  padding: 5%;
+  color: #fff;
+}
+
+.cta h3 {
+  font-size: 4vw;
+  line-height: 5.3vw;
+  font-weight: 500;
+}
+
+.cta p {
+  font-size: 1.2rem;
+  margin: 0.8rem 0;
+  font-size: 1.1rem;
+}
+
+.cta_btn {
+  background: #ff5361;
+  color: #fff;
+  padding: 0.9rem 2rem;
+  border-radius: 0.5rem;
+  margin-top: 1.4rem;
+  display: inline-block;
+}
