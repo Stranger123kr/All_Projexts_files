@@ -66,13 +66,21 @@ body {
   --local_heading: #333;
   --para: #000;
   --icons: #000;
+  --nav_bar: #000;
+  --box_shadow: rgba(0, 0, 0, 0.3);
+  --links: #000;
+  --nav_color: #000;
 }
 
 .Dark_Mod {
-  --primary_color: #030;
+  --primary_color: #000;
   --local_heading: #fff;
   --para: #fff;
   --icons: #fee500;
+  --nav_bar: #add8e6;
+  --box_shadow: rgba(255, 255, 255, 0.2);
+  --links: #fff;
+  --nav_color: #fff;
 }
 
 /* ============================ Main code start form here ================================= */
@@ -91,6 +99,7 @@ body {
 #hamburger {
   display: none;
   cursor: pointer;
+  color: var(--para);
 }
 
 nav {
@@ -116,13 +125,14 @@ nav .nav_links {
 
 nav .nav_links li a {
   position: relative;
+  color: #000;
 }
 
 nav .nav_links li a::after {
   content: "";
   width: 0;
   height: 2px;
-  background: #fff;
+  background: #000;
   position: absolute;
   bottom: -15px;
   left: 0;
@@ -428,7 +438,7 @@ nav .nav_links li a:hover:after {
   width: 100%;
 }
 
-/* ============================ Media query ================================= */
+/* ============================ Media query index.html ================================= */
 
 @media (max-width: 1200px) {
   .color_change {
@@ -462,32 +472,23 @@ nav .nav_links li a:hover:after {
 
   nav .nav_links {
     flex-direction: column;
-    background: #000;
-    width: 30%;
-    border-radius: 1rem 0.2rem 1rem 0.2rem;
+    background: #fff;
+    width: 100%;
     position: absolute;
     top: 10%;
-    right: 2rem;
+    right: 0;
     height: 0;
     overflow: hidden;
     transition: height 0.3s linear;
   }
 
   nav .nav_links.show {
-    height: 25%;
+    height: 30%;
   }
 
   #hamburger {
     display: block;
     font-size: 1.5rem;
-  }
-}
-
-/* ====================== */
-
-@media (max-width: 576px) {
-  nav .nav_links {
-    width: 50%;
   }
 }
 
@@ -523,8 +524,254 @@ nav .nav_links li a:hover:after {
     margin: 5rem auto;
     padding: 1.5rem 0.8rem 1.5rem 2rem;
     height: 25rem;
+    border-radius: 5px;
   }
-  nav .nav_links {
-    width: 80%;
+}
+
+/* ============================ listing css start form here ================================= */
+
+/* ================= this is a navbar css part ============ */
+
+.navbar_white {
+  background: var(--primary_color);
+  box-shadow: 0 2px 10px var(--box_shadow);
+}
+
+.navbar_white .nav_links {
+  background: var(--primary_color);
+}
+nav .nav_links li a::after {
+  background: var(--nav_bar);
+}
+.navbar_white .nav_links a {
+  color: var(--nav_color);
+}
+
+.navbar_white .register_btn {
+  background: #ff5361;
+  color: #fff;
+}
+
+/* ============================ this is hero left part ================================= */
+
+.list_container {
+  margin-top: 3rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.left-col {
+  flex-basis: 70%;
+}
+
+.left-col p {
+  color: var(--para);
+}
+
+.right-col {
+  flex-basis: 25%;
+}
+
+.left-col h1 {
+  color: var(--para);
+  margin-bottom: 2rem;
+  font-weight: 600;
+  margin-top: 0.5rem;
+}
+
+.house {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 2rem 0;
+  border-top: 1px solid #ccc;
+}
+
+.house-img {
+  flex-basis: 40%;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.house-info {
+  flex-basis: 58%;
+  color: #555;
+}
+
+.house-img img {
+  width: 100%;
+  transition: all 0.5s linear;
+}
+
+.house-img img:hover {
+  transform: scale(1.2);
+}
+
+.house-info h3 {
+  font-weight: 600;
+  color: var(--para);
+  font-size: 1.3rem;
+  margin: 0.4rem 0;
+}
+
+.house-info p {
+  font-size: 1rem;
+  color: var(--para);
+}
+
+.house-info i {
+  color: #ff5361;
+  font-size: 1.2rem;
+  margin: 0.8rem 0.1rem;
+  cursor: pointer;
+}
+
+.house_price {
+  text-align: right;
+}
+
+.house_price h4 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-top: 0.4rem;
+  color: var(--para);
+}
+
+.house_price h4 span {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--para);
+}
+
+/* ============================ this is hero right part ================================= */
+
+.sidebar {
+  box-shadow: 0px 0px 0.5rem var(--box_shadow);
+  padding: 1.4rem 2rem;
+  margin-top: 2rem;
+}
+
+.sidebar h2 {
+  font-weight: 500;
+  color: var(--para);
+}
+
+.sidebar h3 {
+  font-weight: 500;
+  margin: 1.4rem 0 0.8rem;
+  font-size: 1.2rem;
+  color: var(--para);
+}
+
+.filter {
+  display: flex;
+  align-items: center;
+  color: var(--para);
+  margin-bottom: 0.8rem;
+  gap: 0.7rem;
+}
+
+.filter p {
+  flex: 1;
+}
+
+.filter input {
+  cursor: pointer;
+}
+
+.sidebar_link {
+  text-align: right;
+  margin: 1.4rem 0;
+}
+.sidebar_link a {
+  color: var(--para);
+}
+
+/* ============================ this is pagination effect ================================= */
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin: 2.8rem 0;
+}
+
+.pagination img {
+  width: 1rem;
+}
+
+.pagination span {
+  color: var(--para);
+  width: 2.5rem;
+  height: 2.5rem;
+  line-height: 2.5rem;
+  text-align: center;
+  border-radius: 50%;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.5s linear;
+}
+
+.pagination span:hover {
+  background: var(--para);
+  color: var(--primary_color);
+}
+
+.pagination .right_arrow {
+  transform: rotateZ(180deg);
+}
+
+.pagination .current {
+  background: var(--para);
+  color: var(--primary_color);
+}
+
+/* ============================ Media query listing.html ================================= */
+
+/* ====================== */
+@media (max-width: 1200px) {
+  .right-col {
+    flex-basis: 70%;
+  }
+}
+
+/* ====================== */
+@media (max-width: 992px) {
+  .right-col {
+    flex-basis: 100%;
+  }
+  .left-col {
+    flex-basis: 100%;
+  }
+}
+
+/* ====================== */
+@media (max-width: 576px) {
+  .left-col {
+    flex-basis: 100%;
+  }
+
+  .right-col {
+    flex-basis: 100%;
+  }
+
+  .house {
+    gap: 1.7rem;
+  }
+
+  .house-img {
+    flex-basis: 100%;
+  }
+
+  .house-info {
+    flex-basis: 100%;
+  }
+
+  .pagination span {
+    width: 2rem;
+    height: 2rem;
+    line-height: 2rem;
   }
 }
