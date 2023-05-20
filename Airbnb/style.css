@@ -18,13 +18,14 @@ img {
 a {
   text-decoration: none;
   font-size: 0.9rem;
-  color: #fff;
+  color: var(--para);
   cursor: pointer;
   font-weight: 600;
 }
 
 p {
   font-size: 1rem;
+  color: var(--para);
 }
 
 h1,
@@ -35,11 +36,12 @@ h5,
 h6 {
   font-size: 1.5rem;
   font-weight: 600;
+  color: var(--para);
 }
 
 body {
   background: var(--primary_color);
-  transition: all 0.5s;
+  transition: all 0.3s;
 }
 
 /* ============================ vertical scroll part ================================= */
@@ -526,6 +528,15 @@ nav .nav_links li a:hover:after {
     height: 25rem;
     border-radius: 5px;
   }
+
+  .search_bar form input {
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 0.5rem;
+  }
+
+  .sidebar {
+    border: 5px double #fff;
+  }
 }
 
 /* ============================ listing css start form here ================================= */
@@ -773,5 +784,261 @@ nav .nav_links li a::after {
     width: 2rem;
     height: 2rem;
     line-height: 2rem;
+  }
+}
+
+/* ============================ this is house.html part ================================= */
+
+.house_details {
+  padding: 0 12%;
+}
+
+.house_title {
+  margin-top: 3rem;
+}
+
+.house_title h1 {
+  font-weight: 600;
+}
+
+.house_title .row {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  margin: 1rem 0;
+}
+
+.house_title span {
+  margin: 0 1.4rem;
+}
+
+.house_title i {
+  color: #ff5361;
+  font-size: 1rem;
+}
+
+.gallery {
+  display: grid;
+  grid-gap: 0.8rem;
+  grid-template-areas: "first first . ." "first first . .";
+  margin: 1.4rem 0;
+}
+
+.gallery div {
+  overflow: hidden;
+  border-radius: 0.5rem;
+}
+
+.gallery div img {
+  width: 100%;
+  display: block;
+  transition: all 0.5s linear;
+}
+
+.gallery div img:hover {
+  transform: scale(1.2);
+}
+
+.gallery_img_1 {
+  grid-area: first;
+  margin-bottom: 0.6rem;
+}
+
+.small_details h2 {
+  font-weight: 500;
+  color: var(--para);
+}
+.small_details h2 {
+  font-weight: 500;
+  color: var(--para);
+}
+
+.small_details p {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.small_details h4 {
+  text-align: right;
+  font-size: 1.2rem;
+  color: var(--para);
+  font-weight: 500;
+}
+
+.line {
+  border: none;
+  height: 1px;
+  background: #ccc;
+  width: 100%;
+  max-width: 50rem;
+  margin: 1.4rem 0 3rem;
+}
+
+.check_form {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  align-items: center;
+  box-shadow: 0 0 10px var(--box_shadow);
+  margin: 2rem 0;
+  padding: 1rem 3rem;
+  background: #fff;
+  border-radius: 0.6rem;
+}
+
+.check_form label {
+  display: block;
+  margin-bottom: 0.4rem;
+}
+
+.check_form input {
+  border: none;
+  outline: none;
+  background: transparent;
+}
+
+.check_form button {
+  background: #ff5361;
+  border: none;
+  outline: none;
+  color: #fff;
+  padding: 1.2rem;
+  width: 22rem;
+  border-radius: 0.6rem;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.guest_filed {
+  flex: 1;
+}
+
+.Details_list {
+  margin: 3rem 0;
+}
+
+.Details_list li {
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin-bottom: 1.4rem;
+  line-height: 1.9rem;
+  color: var(--para);
+  position: relative;
+}
+.Details_list li span {
+  display: block;
+  font-size: 1rem;
+  color: var(--para);
+}
+
+.Details_list li i {
+  position: absolute;
+  top: 0.4rem;
+  left: -2.5rem;
+  color: var(--icons);
+}
+
+.home_decs {
+  width: 100%;
+  max-width: 43rem;
+  margin-bottom: 3rem;
+  line-height: 1.5rem;
+  font-size: 0.9rem;
+  color: var(--para);
+}
+
+.map {
+  margin: 3rem 0;
+}
+
+.map iframe {
+  width: 100%;
+  margin-bottom: 2rem;
+}
+
+.map h3 {
+  font-size: 1.6rem;
+  margin-bottom: 1.5rem;
+}
+
+.map b {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: var(--para);
+}
+
+.host {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+.host img {
+  width: 5rem;
+  border-radius: 50%;
+}
+
+.host h2 {
+  margin-bottom: 0.8rem;
+}
+
+.host i {
+  color: #ff5361;
+}
+
+.Contact_host {
+  display: inline-block;
+  margin: 2.8rem 0 2.8rem 7.7rem;
+  color: var(--para);
+  padding: 1rem 3rem;
+  border: 1px solid #ff5361;
+  border-radius: 0.4rem;
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+/* ============================ Media query house.html ================================= */
+
+/* ================================== */
+
+@media (max-width: 1200px) {
+  .check_form {
+    gap: 2rem;
+  }
+}
+
+/* ================================== */
+
+@media (max-width: 768px) {
+  .gallery {
+    display: grid;
+    grid-gap: 0.8rem;
+    grid-template-areas:
+      "first first"
+      "first first";
+    margin: 1.4rem 0;
+  }
+}
+
+/* ================================== */
+
+@media (max-width: 576px) {
+  .small_details h4 {
+    margin-top: 1rem;
+  }
+
+  .Details_list {
+    margin: 5rem 2rem;
+  }
+
+  .Contact_host {
+    padding: 1rem 2rem;
+  }
+
+  .check_form input {
+    border-bottom: 1px solid #ccc;
+    width: 100%;
+    padding-bottom: 0.4rem;
   }
 }
