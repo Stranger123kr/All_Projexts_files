@@ -259,6 +259,10 @@ nav .nav_links li a:hover:after {
 .exclusives div span h3 {
   font-size: 1.2rem;
   margin-bottom: 0.5rem;
+  color: #fff;
+}
+.exclusives div span p {
+  color: #fff;
 }
 
 /* ============================ trending  part ================================= */
@@ -309,12 +313,14 @@ nav .nav_links li a:hover:after {
   font-size: 4vw;
   line-height: 5.3vw;
   font-weight: 500;
+  color: #fff;
 }
 
 .cta p {
   font-size: 1.2rem;
   margin: 0.8rem 0;
   font-size: 1.1rem;
+  color: #fff;
 }
 
 .cta_btn {
@@ -1033,7 +1039,8 @@ nav .nav_links li a::after {
   }
 
   .Contact_host {
-    padding: 1rem 2rem;
+    padding: 1rem 1rem;
+    margin: 2.8rem 0 2.8rem 7rem;
   }
 
   .check_form input {
