@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="shortcut icon"
+      href="https://cdn4.iconfinder.com/data/icons/mix-3d-elements/128/22_computer_hardware_input_keyboard_custom_wired.png"
+      type="image/x-icon"
+    />
+    <title>Custom_input</title>
+  </head>
+  <body>
+    <div class="hero">
+      <div class="selector">
+        <div id="selectFiled">
+          <p id="select_text">Select Social Media</p>
+          <img src="img/arrow.png" alt="arrow" />
+        </div>
+
+        <ul id="list">
+          <li class="options">
+            <img src="img/facebook.png" alt="facebook" />
+            <p>Facebook</p>
+          </li>
+          <li class="options">
+            <img src="img/whatsapp.png" alt="facebook" />
+            <p>whatsapp</p>
+          </li>
+          <li class="options">
+            <img src="img/instagram.png" alt="facebook" />
+            <p>instagram</p>
+          </li>
+          <li class="options">
+            <img src="img/twitter.png" alt="facebook" />
+            <p>twitter</p>
+          </li>
+          <li class="options">
+            <img src="img/youtube.png" alt="facebook" />
+            <p>youtube</p>
+          </li>
+          <li class="options">
+            <img src="img/pinterest.png" alt="facebook" />
+            <p>pinterest</p>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <script>
+      const select_text = document.querySelector("#select_text");
+      const select = document.querySelector("#selectFiled");
+      const options = document.querySelectorAll(".options");
+      const list = document.querySelector("#list");
+      const icon = document.querySelector("#selectFiled img");
+
+      //   this is method get value of input
+
+      options.forEach((e) => {
+        e.addEventListener("click", () => {
+          select_text.innerHTML = e.innerText;
+          list.classList.toggle("show");
+          icon.classList.toggle("rotate");
+        });
+      });
+
+      //   this is method work for slide menu bar
+
+      const open_menu = () => {
+        list.classList.toggle("show");
+        icon.classList.toggle("rotate");
+      };
+      select.addEventListener("click", open_menu);
+    </script>
+  </body>
+</html>
